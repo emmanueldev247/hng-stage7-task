@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     APP_ENV: str = "development"
     APP_PORT: int = 8000
+    APP_DEBUG: bool = True if APP_ENV == "development" else False
 
     # Database
     DATABASE_URL: str = "postgresql://user:password@localhost:5432/mini_auth_api_key_db"

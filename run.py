@@ -8,5 +8,5 @@ if __name__ == "__main__":
         "app.main:app",
         host="0.0.0.0",
         port=settings.APP_PORT,
-        reload=True,
+        reload=settings.APP_DEBUG,
     )
