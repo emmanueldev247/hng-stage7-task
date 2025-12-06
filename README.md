@@ -236,12 +236,11 @@ FastAPI provides interactive API docs:
 
 Example Swagger view:
 
-> Screenshot placeholder  
-> `docs/images/swagger-main.png`
+<img width="1013" height="667" alt="image" src="https://github.com/user-attachments/assets/1a1650f0-b81e-4065-ad4d-f9802311a878" />
 
 ---
 
-## Auth Flows
+## Auth Flows - with sample request/response screenshot 
 
 ### 1. User Signup & Login (JWT)
 
@@ -255,6 +254,8 @@ Example Swagger view:
     "password": "StrongPass1!"
   }
   ```
+<img width="661" height="456" alt="Screenshot 2025-12-06 053629" src="https://github.com/user-attachments/assets/fe1fc81f-bd94-4396-aa62-02234f8ce7dc" />
+<img width="613" height="455" alt="Screenshot 2025-12-06 053635" src="https://github.com/user-attachments/assets/5c99d1f8-f299-481f-84cd-4335b7a58646" />
 
 **Login**
 
@@ -273,6 +274,9 @@ Example Swagger view:
     "token_type": "bearer"
   }
   ```
+<img width="1106" height="428" alt="Screenshot 2025-12-06 053658" src="https://github.com/user-attachments/assets/0db3e74a-b5ea-4e6b-9d49-4cf9c042e878" />
+<img width="919" height="373" alt="Screenshot 2025-12-06 053733" src="https://github.com/user-attachments/assets/15bef02c-8aed-44ee-86c8-479cd76a65a7" />
+
 
 **Get current user**
 
@@ -281,6 +285,8 @@ Example Swagger view:
   ```http
   Authorization: Bearer <JWT>
   ```
+<img width="1072" height="374" alt="Screenshot 2025-12-06 053747" src="https://github.com/user-attachments/assets/604f487d-3b5b-418c-9e16-470b1d114aad" />
+
 
 ---
 
@@ -305,9 +311,8 @@ Example Swagger view:
     "expires_at": "2025-01-01T00:00:00+00:00"
   }
   ```
-
-> Screenshot placeholder  
-> `docs/images/keys-create.png`
+<img width="1072" height="353" alt="Screenshot 2025-12-06 053815" src="https://github.com/user-attachments/assets/90b3d566-fd64-41f5-90ba-d3529b230990" />
+<img width="1142" height="452" alt="Screenshot 2025-12-06 053851" src="https://github.com/user-attachments/assets/936af152-f877-4048-9889-87b774dfc2a8" />
 
 **List API keys**
 
@@ -328,11 +333,15 @@ Example Swagger view:
     }
   ]
   ```
+<img width="1070" height="448" alt="Screenshot 2025-12-06 053916" src="https://github.com/user-attachments/assets/893b8d2b-849d-4a48-9f32-c27496a61952" />
+
 
 **Revoke API key**
 
 - `POST /keys/{key_id}/revoke`
 - Marks the key as `revoked=true`.
+
+<img width="1055" height="407" alt="image" src="https://github.com/user-attachments/assets/8b063e93-1ccd-478b-86d4-70cbc5cebd6b" />
 
 ---
 
@@ -355,8 +364,30 @@ Example Swagger view:
   }
   ```
 
-> Screenshot placeholder  
-> `docs/images/service-ping.png`
+
+if no key is provided, the endpoint returns:
+
+```json
+{
+  "detail": "Missing x-api-key head"
+}
+```
+
+<img width="708" height="377" alt="Screenshot 2025-12-06 053938" src="https://github.com/user-attachments/assets/ed082e75-e498-49f7-b3d9-8a4a64730892" />
+
+
+If the key is valid, the endpoint returns:
+
+```json
+{
+  "status": "ok",
+  "service_label": "hng-token",
+  "owner_user_id": 4,
+  "api_key_id": 2
+}
+```
+<img width="846" height="417" alt="Screenshot 2025-12-06 053951" src="https://github.com/user-attachments/assets/86a8bcf9-31fa-4099-bbe3-e2e57e705d74" />
+
 
 If the key is expired or revoked, the endpoint returns:
 
@@ -367,6 +398,10 @@ If the key is expired or revoked, the endpoint returns:
 ```
 
 with HTTP `401 Unauthorized`.
+
+
+
+<img width="679" height="409" alt="image" src="https://github.com/user-attachments/assets/51a16956-746b-4b37-9003-56234d817963" />
 
 ---
 
