@@ -18,4 +18,8 @@ class User(Base):
         onupdate=func.now(),
     )
 
-    api_keys = relationship("ApiKey", back_populates="owner")
+    api_keys = relationship(
+        "ApiKey",
+        back_populates="owner",
+        passive_deletes=True,
+    )
