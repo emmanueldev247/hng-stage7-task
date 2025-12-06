@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# Virtual env
+venv/
+.env
+.env
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Byte-compiled
+*.so
+
+# Migrations cache
+alembic.ini.bak
